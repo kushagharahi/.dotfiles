@@ -1,0 +1,4 @@
+gen_random_string () {
+  local val=$(LC_CTYPE=C tr -cd "a-z0-9" < /dev/urandom | tr -dc '[:alnum:]' | fold -w 6 | head -n 1)
+  echo "$val"
+}
