@@ -1,0 +1,14 @@
+# enable color by default on `ls`
+alias ls = "ls -GFh"
+
+# cd to projects folder
+alias p = "Documents/Projects/"
+
+# git | wipe changes & switch to latest remote master
+alias gitmaster = "git checkout master && git reset --hard origin/master && git pull origin master"
+
+# docker | kill all running containers and remove all stopped containers
+alias dockerkill = "docker kill $(docker ps -a -q) ; docker rm $(docker ps -a -q)"
+
+# intellj | open specified folder in intellj 
+alias intellj="open -a /Applications/IntelliJ\ IDEA.app"
