@@ -13,5 +13,4 @@ do
     source ~/.dotfiles/$DOTFILE
   fi
 done
-
 ```
