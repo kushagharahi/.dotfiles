@@ -9,7 +9,6 @@ for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
 do
   if [[ $DOTFILE == '.'* ]] && [[ $DOTFILE != '.git'* ]]
   then
-    echo $DOTFILE
     source ~/.dotfiles/$DOTFILE
   fi
 done
