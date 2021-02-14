@@ -3,7 +3,7 @@ My dotfiles
 
 ## Usage
 ### Mac - Zsh
-Export dotfiles in .zshrc. Ensure this repository is cloned as ~/.dotfiles
+Export dotfiles in `.zshrc`. Ensure this repository is cloned as `~/.dotfiles`
 ```
 #Find only filenames in directory
 for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
@@ -15,7 +15,7 @@ do
 done
 ```
 ### Ubuntu - Zsh
-Export dotfiles in .zshrc. Ensure this repository is cloned as ~/.dotfiles
+Export dotfiles in `.zshrc`. Ensure this repository is cloned as `~/.dotfiles`
 ```
 #Find only filenames in directory
 for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
