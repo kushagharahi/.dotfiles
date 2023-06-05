@@ -1,5 +1,8 @@
 # .dotfiles
 My dotfiles
+- Features fish like autosuggestions and syntax highlighting. 
+- Few aliases to make life easier
+- ubuntu ssh-agent auto start/add identities 
 
 ## Usage
 ##### //todo: automate
