@@ -5,7 +5,12 @@ My dotfiles
 - ubuntu ssh-agent auto start/add identities 
 
 ## Usage
-##### //todo: automate
+Clone this folder to ~/.dotfiles
+
+### Automated setup
+Run install.sh
+
+### Manual setup
 Required:
 1. Install [ohmyzsh](https://ohmyz.sh/#install)
 
@@ -18,23 +23,9 @@ Required:
 
     - Mac - Zsh
       ```
-      #Find only filenames in directory
-      for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
-      do
-        if [[ $DOTFILE == '.'* ]] && [[ $DOTFILE != '.git'* ]] && [[ $DOTFILE != *'-ubuntu' ]]
-        then
-          source ~/.dotfiles/$DOTFILE
-        fi
-      done
+      source ~/.dotfiles/.dotfiles-setup-mac
       ```
     - Ubuntu - Zsh
       ```
-      #Find only filenames in directory
-      for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
-      do
-        if [[ $DOTFILE == '.'* ]] && [[ $DOTFILE != '.git'* ]] && [[ $DOTFILE != *'-mac' ]]
-        then
-          source ~/.dotfiles/$DOTFILE
-        fi
-      done
+      source ~/.dotfiles/.dotfiles-setup-ubuntu
       ```
