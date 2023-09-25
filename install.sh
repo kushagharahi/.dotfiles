@@ -28,7 +28,6 @@ else
   echo "Cloning complete."
 fi
 
-
 # Check if Oh My Zsh is installed, install if not
 if ! command -v zsh >/dev/null 2>&1; then
   echo "Installing Oh My Zsh..."
@@ -104,3 +103,6 @@ else
 fi
 
 echo "Terminal environment setup completed."
+
+zsh
+source ~/.zshrc
