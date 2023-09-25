@@ -8,7 +8,7 @@ if ! command -v zsh &> /dev/null; then
         # install zsh for ubuntu
         echo "Zsh is not installed. Installing..."
         sudo apt update
-        sudo apt install zsh
+        sudo apt install zsh -y
     fi
 else
     echo "Zsh is already installed."
