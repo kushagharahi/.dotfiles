@@ -17,7 +17,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/kushagharahi/.dotfiles/m
 - GitHub will cache this script, if you are actively developing/pushing, add `?token=$(date +%s)` to the end of the url to get around this.
   - Add `noglob` before `curl` if you're running into the error `zsh: no matches found: [...]` in zsh. This disables wildcard characters such as the `?` which zsh uses for matching.
    
-Alternatively you can cloning this repo to `$HOME/.dotfiles` and running `ìnstall.sh` (safer)
+Alternatively you can clone this repo to `~/.dotfiles` and run `ìnstall.sh` (safer)
 
 ### Manual setup
 Required:
