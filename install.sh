@@ -14,10 +14,9 @@ else
     echo "Zsh is already installed."
 fi
 
-# Function to ask for SSH key generation
-ask_for_ssh_key() {
-  read -p "Do you want to generate SSH keys? (y/n): " generate_ssh_key
-  if [ "$generate_ssh_key" = "y" ]; then
+# Ask if SSH keys should be generated
+read -p "Do you want to generate SSH keys? (y/n): " generate_ssh_key
+if [ "$generate_ssh_key" = "y" ]; then
     read -p "Enter your email address for SSH key generation: " email
     ssh-keygen -t rsa -b 4096 -C "$email"
     echo ""
@@ -27,8 +26,8 @@ ask_for_ssh_key() {
     echo "Now you can add the public key to your GitHub account for easy authentication."
     echo "Visit https://github.com/settings/keys and add your key there."
     read -p "Press Enter to continue..."
-  fi
-}
+fi
+
 
 dotfiles_dir="$HOME/.dotfiles"
 github_repo="git@github.com:kushagharahi/.dotfiles.git"
@@ -96,9 +95,6 @@ for plugin in "${new_plugins[@]}"; do
       sed -i '' "/^plugins=/ s/)/ $plugin)/" ~/.zshrc
   fi
 done
-
-# Ask if SSH keys should be generated
-ask_for_ssh_key
 
 add_dotfiles_sourcing() {
   local file_to_source="$1"
