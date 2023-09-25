@@ -16,6 +16,19 @@ ask_for_ssh_key() {
   fi
 }
 
+dotfiles_dir="$HOME/.dotfiles"
+github_repo="git@github.com:kushagharahi/.dotfiles.git"
+
+# Check if ~/.dotfiles directory exists
+if [ -d "$dotfiles_dir" ]; then
+  echo "The ~/.dotfiles directory already exists."
+else
+  echo "Cloning ~/.dotfiles from GitHub..."
+  git clone "$github_repo" "$dotfiles_dir"
+  echo "Cloning complete."
+fi
+
+
 # Check if Oh My Zsh is installed, install if not
 if ! command -v zsh >/dev/null 2>&1; then
   echo "Installing Oh My Zsh..."
@@ -69,10 +82,10 @@ done
 # Ask if SSH keys should be generated
 ask_for_ssh_key
 
-add_dotfiles_source() {
+add_dotfiles_sourcing() {
   local file_to_source="$1"
   if grep -q "$file_to_source" ~/.zshrc; then
-    echo "$file_to_source already sourced in .zshrc"
+    echo "$file_to_source already sourced in .zshrc!"
   else
     echo "$file_to_source" >> ~/.zshrc
     echo "sourced $file_to_source in .zshrc!"
@@ -83,11 +96,11 @@ add_dotfiles_source() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Check if the line exists in .zshrc
   file_to_source="source ~/.dotfiles/.dotfiles-setup-mac"
-  add_dotfiles_source "$file_to_source"
+  add_dotfiles_sourcing "$file_to_source"
 else
   # Check if the line exists in .zshrc
   file_to_source="source ~/.dotfiles/.dotfiles-setup-ubuntu"
-  add_dotfiles_source "$file_to_source"
+  add_dotfiles_sourcing "$file_to_source"
 fi
 
 echo "Terminal environment setup completed."
