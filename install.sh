@@ -4,9 +4,11 @@
 read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
 if [ "$generate_ssh_key" = "y" ]; then
     read -p "Enter your email address for SSH key generation: " email
-    ssh-keygen -t rsa -b 4096 -C "$email"
+    read -p "Enter the file name in which to save the key [id_rsa]: " key_name
+    key_name=${key_name:-id_rsa}
+    ssh-keygen -t rsa -b 4096 -C "$email" -f "$HOME/.ssh/$key_name"
     echo ""
-    cat ~/.ssh/id_rsa.pub
+    cat ~/.ssh/$key_name.pub
     echo ""
     echo "Your public SSH key has been generated."
     echo "Now you can add the public key to your GitHub account for easy authentication."
