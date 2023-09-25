@@ -10,8 +10,6 @@ if [ "$generate_ssh_key" = "y" ]; then
     echo ""
     cat ~/.ssh/$key_name.pub
     echo ""
-    echo "Your public SSH key has been generated."
-    echo "Now you can add the public key to your GitHub account for easy authentication."
     echo "Visit https://github.com/settings/keys and add your key there."
     read -p "Press Enter to continue..."
 fi
@@ -54,6 +52,9 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh/" ]; then
   echo "Installing Oh My Zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # restart ZSH
+  EOF
+  zsh -f <<'EOF'
 else
   echo "Oh My Zsh is already installed."
 fi
