@@ -14,7 +14,7 @@ else
     echo "Zsh is already installed."
 fi
 
-zsh
+zsh -f
 
 # Ask if SSH keys should be generated
 read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
