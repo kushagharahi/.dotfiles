@@ -12,8 +12,9 @@ My dotfiles
 ### Automated setup
 Run the install script either via: 
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/kushagharahi/.dotfiles/master/install.sh?token=$(date +%s))"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kushagharahi/.dotfiles/master/install.sh)"
 ```
+(GitHub will cache this script, if you are actively developing/pushing, add `?token=$(date +%s)` to the end of the url to get around this)
 or by cloning this repo to `$HOME/.dotfiles` and running `ìnstall.sh` (safer)
 
 ### Manual setup
