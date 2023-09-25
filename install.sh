@@ -94,7 +94,7 @@ existing_plugins=$(grep -o 'plugins=([^)]*' ~/.zshrc | sed 's/plugins=(//' | tr 
 for plugin in "${new_plugins[@]}"; do
   if [[ ! " $existing_plugins " =~ " $plugin " ]]; then
     echo "Adding $plugin to the list of plugins..."
-      sed -i '' "/^plugins=/ s/)/ $plugin)/" ~/.zshrc
+      sed -i "/^plugins=/ s/)/ $plugin)/" ~/.zshrc
   fi
 done
 
