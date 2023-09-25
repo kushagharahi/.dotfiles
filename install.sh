@@ -49,7 +49,7 @@ else
 fi
 
 # Check if Oh My Zsh is installed, install if not
-if ! command -v zsh >/dev/null 2>&1; then
+if [ ! -d "$HOME/.oh-my-zsh/" ]; then
   echo "Installing Oh My Zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
