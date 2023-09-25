@@ -8,7 +8,11 @@ My dotfiles
 Clone this folder to ~/.dotfiles
 
 ### Automated setup
-Run install.sh
+Run the install script either via: 
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/kushagharahi/.dotfiles/master/install.sh)"
+```
+or by cloning this repo and running `ìnstall.sh`
 
 ### Manual setup
 Required:
