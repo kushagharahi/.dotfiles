@@ -14,7 +14,7 @@ Run the install script either via:
 ```
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/kushagharahi/.dotfiles/master/install.sh?token=$(date +%s))"
 ```
-or by cloning this repo and running `ìnstall.sh` (safer)
+or by cloning this repo to `$HOME/.dotfiles` and running `ìnstall.sh` (safer)
 
 ### Manual setup
 Required:

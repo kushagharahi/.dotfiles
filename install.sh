@@ -23,12 +23,14 @@ if ! command -v zsh &> /dev/null; then
         # install zsh for ubuntu
         echo "Zsh is not installed. Installing..."
         sudo apt update
-        sudo apt install zsh -y
+        # -qq is quiet mode -y prevents the user from having to accept
+        sudo apt install zsh -qq -y
     fi
 else
     echo "Zsh is already installed."
 fi
 
+# Pipe script until EOF in zsh since we can't do oh-my-zsh stuff in bash.
 zsh -f <<'EOF'
 
 dotfiles_dir="$HOME/.dotfiles"
