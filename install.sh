@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! command -v zsh &> /dev/null; then
     # If mac
@@ -14,7 +14,7 @@ else
     echo "Zsh is already installed."
 fi
 
-zsh -f
+zsh -f <<'EOF'
 
 # Ask if SSH keys should be generated
 read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
