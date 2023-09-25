@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if ! command -v zsh &> /dev/null; then
     # If mac
