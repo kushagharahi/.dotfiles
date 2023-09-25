@@ -119,6 +119,8 @@ else
   # Check if the line exists in .zshrc
   file_to_source="source ~/.dotfiles/.dotfiles-setup-ubuntu"
   add_dotfiles_sourcing "$file_to_source"
+  # Make zsh default shell
+  sudo chsh -s $(which zsh) $(whoami)
 fi
 
 echo "Terminal environment setup completed."
