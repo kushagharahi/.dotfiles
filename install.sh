@@ -11,7 +11,7 @@ if [ "$generate_ssh_key" = "y" ]; then
     cat ~/.ssh/$key_name.pub
     echo ""
     echo "Visit https://github.com/settings/keys and add your key there."
-    read -p "Press Enter to continue..."
+    read -p "Press Enter to continue once you have set your key [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED]..."
 fi
 
 
@@ -52,12 +52,13 @@ fi
 if [ ! -d "$HOME/.oh-my-zsh/" ]; then
   echo "Installing Oh My Zsh..."
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # restart ZSH
-  EOF
-  zsh -f <<'EOF'
 else
   echo "Oh My Zsh is already installed."
 fi
+
+# restart ZSH
+EOF
+zsh -f <<'EOF'
 
 is_plugin_installed() {
     local plugin_name="$1"
