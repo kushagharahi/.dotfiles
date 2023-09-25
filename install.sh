@@ -122,3 +122,5 @@ fi
 echo "Terminal environment setup completed."
 
 source ~/.zshrc
+
+EOF
