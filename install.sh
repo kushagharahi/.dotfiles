@@ -56,10 +56,6 @@ else
   echo "Oh My Zsh is already installed."
 fi
 
-# restart ZSH
-EOF
-zsh <<'EOF'
-
 is_plugin_installed() {
     local plugin_name="$1"
     zsh_plugins_dir="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
@@ -125,6 +121,6 @@ fi
 
 echo "Terminal environment setup completed."
 
-source ~/.zshrc
-
 EOF
+
+zsh
