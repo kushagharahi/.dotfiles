@@ -14,8 +14,10 @@ else
     echo "Zsh is already installed."
 fi
 
+zsh
+
 # Ask if SSH keys should be generated
-read -p "Do you want to generate SSH keys? (y/n): " generate_ssh_key
+read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
 if [ "$generate_ssh_key" = "y" ]; then
     read -p "Enter your email address for SSH key generation: " email
     ssh-keygen -t rsa -b 4096 -C "$email"
@@ -39,7 +41,7 @@ else
   echo "Cloning ~/.dotfiles from GitHub..."
   git clone "$github_repo" "$dotfiles_dir"
   
-  if [ ! -d "~/.dotfiles/" ]; then
+  if [ ! -d "$HOME/.dotfiles/" ]; then
     echo "Cloning failed! Ensure your SSH key is set!"
   else 
     echo "Clone complete!"
@@ -119,5 +121,4 @@ fi
 
 echo "Terminal environment setup completed."
 
-zsh
 source ~/.zshrc
