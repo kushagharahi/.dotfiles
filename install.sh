@@ -58,7 +58,7 @@ fi
 
 # restart ZSH
 EOF
-zsh -f <<'EOF'
+zsh <<'EOF'
 
 is_plugin_installed() {
     local plugin_name="$1"
