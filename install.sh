@@ -1,5 +1,19 @@
 #!/bin/bash
 
+if ! command -v zsh &> /dev/null; then
+    # If mac
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        echo "Detected OS is macos, expected Zsh to be installed. Did not detect it. Fix this! Exiting."
+    else
+        # install zsh for ubuntu
+        echo "Zsh is not installed. Installing..."
+        sudo apt update
+        sudo apt install zsh
+    fi
+else
+    echo "Zsh is already installed."
+fi
+
 # Function to ask for SSH key generation
 ask_for_ssh_key() {
   read -p "Do you want to generate SSH keys? (y/n): " generate_ssh_key
