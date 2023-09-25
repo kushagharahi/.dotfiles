@@ -1,5 +1,20 @@
 #!/bin/bash
 
+# Ask if SSH keys should be generated
+read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
+if [ "$generate_ssh_key" = "y" ]; then
+    read -p "Enter your email address for SSH key generation: " email
+    ssh-keygen -t rsa -b 4096 -C "$email"
+    echo ""
+    cat ~/.ssh/id_rsa.pub
+    echo ""
+    echo "Your public SSH key has been generated."
+    echo "Now you can add the public key to your GitHub account for easy authentication."
+    echo "Visit https://github.com/settings/keys and add your key there."
+    read -p "Press Enter to continue..."
+fi
+
+
 if ! command -v zsh &> /dev/null; then
     # If mac
     if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -15,21 +30,6 @@ else
 fi
 
 zsh -f <<'EOF'
-
-# Ask if SSH keys should be generated
-read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
-if [ "$generate_ssh_key" = "y" ]; then
-    read -p "Enter your email address for SSH key generation: " email
-    ssh-keygen -t rsa -b 4096 -C "$email"
-    echo ""
-    cat ~/.ssh/id_rsa.pub
-    echo ""
-    echo "Your public SSH key has been generated."
-    echo "Now you can add the public key to your GitHub account for easy authentication."
-    echo "Visit https://github.com/settings/keys and add your key there."
-    read -p "Press Enter to continue..."
-fi
-
 
 dotfiles_dir="$HOME/.dotfiles"
 github_repo="git@github.com:kushagharahi/.dotfiles.git"
