@@ -39,7 +39,12 @@ if [ -d "$dotfiles_dir" ]; then
 else
   echo "Cloning ~/.dotfiles from GitHub..."
   git clone "$github_repo" "$dotfiles_dir"
-  echo "Cloning complete."
+  
+  if [ ! -d "~/.dotfiles/" ]; then
+    echo "Cloning failed! Ensure your SSH key is set!"
+  else 
+    echo "Clone complete!"
+  fi
 fi
 
 # Check if Oh My Zsh is installed, install if not
