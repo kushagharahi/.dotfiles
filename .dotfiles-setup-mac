@@ -1,0 +1,8 @@
+#Find only filenames in directory
+for DOTFILE in `find ~/.dotfiles -type f -exec basename {} \;`
+do
+if [[ $DOTFILE == '.'* ]] && [[ $DOTFILE != '.git'* ]] && [[ $DOTFILE != *'-ubuntu' ]] && [[ $DOTFILE != *'-setup-'* ]]
+then
+    source ~/.dotfiles/$DOTFILE
+fi
+done
