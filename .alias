@@ -2,7 +2,7 @@
 alias ls='ls -GFh'
 
 # cd to projects folder
-alias p='Documents/Projects/'
+alias p='cd ~/Documents/Projects/'
 
 # git | wipe changes & switch to latest remote master
 alias gitmaster='git checkout master && git reset --hard origin/master && git pull origin master'

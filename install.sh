@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask if SSH keys should be generated
-read -p "Do you want to generate SSH keys? [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED] (y/n):" generate_ssh_key
+read -p "Do you want to generate SSH keys? (y/n):" generate_ssh_key
 if [ "$generate_ssh_key" = "y" ]; then
     read -p "Enter your email address for SSH key generation: " email
     read -p "Enter the file name in which to save the key [id_rsa]: " key_name
@@ -11,14 +11,15 @@ if [ "$generate_ssh_key" = "y" ]; then
     cat ~/.ssh/$key_name.pub
     echo ""
     echo "Visit https://github.com/settings/keys and add your key there."
-    read -p "Press Enter to continue once you have set your key [SSH KEY SHOULD BE SET ON GITHUB TO PROCEED]..."
+    read -p "Press Enter to continue once you have set your key..."
 fi
 
 
 if ! command -v zsh &> /dev/null; then
     # If mac
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "Detected OS is macos, expected Zsh to be installed. Did not detect it. Fix this! Exiting."
+        echo "Detected OS is macOS, expected Zsh to be installed. Did not detect it. Fix this! Exiting."
+        exit 1
     else
         # install zsh for ubuntu
         echo "Zsh is not installed. Installing..."
@@ -34,7 +35,7 @@ fi
 zsh -f <<'EOF'
 
 dotfiles_dir="$HOME/.dotfiles"
-github_repo="git@github.com:kushagharahi/.dotfiles.git"
+github_repo="https://github.com/kushagharahi/.dotfiles.git"
 
 # Check if ~/.dotfiles directory exists
 if [ -d "$dotfiles_dir" ]; then
