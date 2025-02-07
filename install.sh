@@ -90,7 +90,8 @@ fi
 
 echo "Checking if oh-my-zsh plugins list should be updated..."
 # Define plugins to add
-new_plugins=("git" "zsh-autosuggestions" "zsh-syntax-highlighting")
+# TODO: Should kubectl be defined by default?
+new_plugins=("git" "kubectl" "zsh-autosuggestions" "zsh-syntax-highlighting")
 # Read the existing plugins from .zshrc
 existing_plugins=$(grep -o 'plugins=([^)]*' ~/.zshrc | sed 's/plugins=(//' | tr -d '\n' | tr -d '\r')
 # Append new plugins that are not already in the list

@@ -1,6 +1,6 @@
 # .dotfiles
 My dotfiles
-- Installs oh-my-zsh plus a few opinioned plugins
+- Installs oh-my-zsh plus a few opinioned plugins (git kubectl zsh-autosuggestions zsh-syntax-highlighting)
 - Automates ssh key setup
 - Works on macOS and Ubuntu
 - Features fish like autosuggestions and syntax highlighting
