@@ -1,6 +1,7 @@
 # .dotfiles
 My dotfiles
 - Installs oh-my-zsh plus a few opinioned plugins (git kubectl zsh-autosuggestions zsh-syntax-highlighting)
+- Enables `fzf` shell bindings when `fzf` is installed, including fuzzy `Ctrl-R` history search
 - Automates ssh key setup
 - Works on macOS and Ubuntu
 - Features fish like autosuggestions and syntax highlighting
@@ -30,7 +31,11 @@ Required:
     - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh) - fish like syntax highlighting
     - Update plugins to be `git zsh-autosuggestions zsh-syntax-highlighting`
 
-4. Export dotfiles - Paste snippet below in `.zshrc`. Ensure this repository is cloned as `~/.dotfiles`
+4. Install `fzf` if you want fuzzy `Ctrl-R` history search
+    - macOS: `brew install fzf`
+    - Ubuntu: `sudo apt install fzf`
+
+5. Export dotfiles - Paste snippet below in `.zshrc`. Ensure this repository is cloned as `~/.dotfiles`
 
     - Mac - Zsh
       ```

@@ -1,0 +1,16 @@
+[[ -o interactive ]] || return 0
+
+if command -v fzf >/dev/null 2>&1; then
+  # Prefer package-managed shell integration when it exists.
+  for fzf_base in \
+    /opt/homebrew/opt/fzf/shell \
+    /usr/local/opt/fzf/shell \
+    "$HOME/.fzf/shell" \
+    /usr/share/doc/fzf/examples
+  do
+    if [[ -f "$fzf_base/key-bindings.zsh" ]]; then
+      source "$fzf_base/key-bindings.zsh"
+      break
+    fi
+  done
+fi
